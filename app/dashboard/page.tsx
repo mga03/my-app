@@ -9,16 +9,20 @@ import {
 } from "@/components/ui/sidebar"
 
 import data from "./data.json"
+import react from "react"
+// import { Calendar } from "lucide-react"
 
 export default function Page() {
+
+
+
+
   return (
     <SidebarProvider
-      style={
-        {
-          "--sidebar-width": "calc(var(--spacing) * 72)",
-          "--header-height": "calc(var(--spacing) * 12)",
-        } as React.CSSProperties
-      }
+      style={{
+        "--sidebar-width": "calc(var(--spacing) * 72)",
+        "--header-height": "calc(var(--spacing) * 12)",
+      } as React.CSSProperties}
     >
       <AppSidebar variant="inset" />
       <SidebarInset>
@@ -31,6 +35,9 @@ export default function Page() {
                 <ChartAreaInteractive />
               </div>
               <DataTable data={data} />
+              <div className="px-4 lg:px-6">
+                
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,9 @@
 "use client"
 
 import * as React from "react"
+import { Calendar } from "@/components/ui/calendar"
+
+
 import {
   IconCamera,
   IconChartBar,
@@ -57,7 +60,7 @@ const data = {
     },
     {
       title: "Projects",
-      url: "#",
+      url: "/app/projects",
       icon: IconFolder,
     },
     {
@@ -151,6 +154,7 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const [date, setDate] = React.useState<Date | undefined>(new Date())
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
@@ -173,7 +177,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavDocuments items={data.documents} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
-      <SidebarFooter>
+   <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      className="rounded-md border shadow-sm"
+      captionLayout="dropdown"
+    />
+      
+        <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>

@@ -10,7 +10,7 @@ export default function Page() {
 <Button className="w-full px-[0px]" variant={"destructive"}>
           <a href="/dashboard" className="w-full h-full">pass</a>
         </Button>
-        cambio
+       
 
       </div>
     </div>
